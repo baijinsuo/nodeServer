@@ -26,13 +26,12 @@ module.exports = {
   deploy: {
     production: {
       user: 'root',
-      host: '39.96.88.23',
+      host: '49.233.3.220',
       ref: 'origin/master',
-      repo: 'GIT_REPOSITORY',
-      path: 'DESTINATION_PATH',
-      'pre-deploy-local': '',
+      repo: 'git@github.com:baijinsuo/nodeServer.git',
+      path: '/usr/local/myProject',
+      ssh_options: "StrictHostKeyChecking=no",
       'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production',
-      'pre-setup': ''
     }
   }
 };
